@@ -1,0 +1,7 @@
+<div>
+  <saw-resume-planets (deletePlanet)="deleteOnPlanet($event)" [maplanet]="item"
+    *ngFor="let item of planets"></saw-resume-planets>
+</div>
+
+<button (click)="add()">[ + ]</button>
+<button (click)="remove()">[ - ]</button>

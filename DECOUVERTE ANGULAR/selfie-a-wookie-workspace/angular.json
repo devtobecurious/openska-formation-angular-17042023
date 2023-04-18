@@ -8,7 +8,7 @@
       "schematics": {},
       "root": "projects/seleci-a-wookies",
       "sourceRoot": "projects/seleci-a-wookies/src",
-      "prefix": "app",
+      "prefix": "saw",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
