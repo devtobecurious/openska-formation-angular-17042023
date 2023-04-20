@@ -1,4 +1,4 @@
-<div>
+<div *ngIf="planets$ | async as planets">
   <saw-resume-planets (deletePlanet)="deleteOnPlanet($event)" [maplanet]="item"
     *ngFor="let item of planets"></saw-resume-planets>
 </div>

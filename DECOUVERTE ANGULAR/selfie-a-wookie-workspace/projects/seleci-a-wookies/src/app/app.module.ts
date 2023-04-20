@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PlanetsModule } from './features/planets/planets.module';
 import { FightObsVsPromComponent } from './learnings/fight-obs-vs-prom/fight-obs-vs-prom.component';
+import { RouterLink, RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { FightObsVsPromComponent } from './learnings/fight-obs-vs-prom/fight-obs
     AppRoutingModule,
     SearchModule,
     PlanetsModule,
-    FightObsVsPromComponent
+    FightObsVsPromComponent,
+    //RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]

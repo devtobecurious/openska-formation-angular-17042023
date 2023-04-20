@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Observable } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 
 @Component({
   selector: 'saw-fight-obs-vs-prom',
@@ -9,7 +9,13 @@ import { Observable } from 'rxjs';
   templateUrl: './fight-obs-vs-prom.component.html',
   styleUrls: ['./fight-obs-vs-prom.component.css']
 })
-export class FightObsVsPromComponent implements OnInit {
+export class FightObsVsPromComponent implements OnInit, OnDestroy {
+  public obs$ !: Observable<string>;
+
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
+  }
+  private subscription = new Subscription();
 
   ngOnInit(): void {
     console.info('------------------------------------');
@@ -21,7 +27,7 @@ export class FightObsVsPromComponent implements OnInit {
       resolve('Promise: I have the result');
     }).then(item => console.info(item));
 
-    const observable$ = new Observable(observer => {
+    this.obs$ = new Observable(observer => {
       console.info("Observable: I'm doing something ");
 
       observer.error('Observable: I have an error');
@@ -36,7 +42,8 @@ export class FightObsVsPromComponent implements OnInit {
       console.info('Observable: I have finished');
     });
 
-    observable$.subscribe(item => console.info(item),);
+    // const sub = observable$.subscribe(item => console.info(item),);
+    // this.subscription.add(sub);
 
     console.info('***********************************');
   }
