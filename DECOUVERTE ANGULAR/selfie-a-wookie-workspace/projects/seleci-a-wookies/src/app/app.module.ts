@@ -1,9 +1,11 @@
+import { SearchModule } from './shared/ui/search/search.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PlanetsModule } from './features/planets/planets.module';
+import { FightObsVsPromComponent } from './learnings/fight-obs-vs-prom/fight-obs-vs-prom.component';
 
 @NgModule({
   declarations: [
@@ -11,8 +13,11 @@ import { PlanetsModule } from './features/planets/planets.module';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
-    PlanetsModule
+    SearchModule,
+    PlanetsModule,
+    FightObsVsPromComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
